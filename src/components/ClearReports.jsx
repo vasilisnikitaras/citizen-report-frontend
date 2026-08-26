@@ -15,12 +15,13 @@ export default function ClearReports() {
     // ⭐ ADMIN → Σβήνει backend (Neon DB)
     const token = localStorage.getItem("token");
 
-    await fetch("http://localhost:3001/clear-reports", {
-      method: "DELETE",
-      headers: {
-        Authorization: "Bearer " + token
-      }
-    });
+    await fetch("https://citizen-report-backend-chi.vercel.app/reports", {
+  method: "DELETE",
+  headers: {
+    Authorization: "Bearer " + token
+  }
+});
+
 
     alert("🧹 Όλες οι καταγγελίες διαγράφηκαν από τη Neon DB!");
     window.location.reload();
