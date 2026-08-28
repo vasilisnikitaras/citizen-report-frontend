@@ -8,6 +8,10 @@ import ClearReports from './components/ClearReports.jsx';
 import ExportCSV from './components/ExportCSV.jsx';
 import AdminDashboard from './components/AdminDashboard.jsx';
 
+// ⭐ ΕΔΩ ΜΠΑΙΝΕΙ
+import i18n from "./i18n";
+
+
 function App() {
   const [selectedType, setSelectedType] = useState('');
   const [user, setUser] = useState(localStorage.getItem('user') || '');
