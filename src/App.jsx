@@ -14,10 +14,22 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
-    const saved = localStorage.getItem("user");
-    if (saved) {
-      setUser(saved.trim());
-    }
+  const saved = localStorage.getItem("user");
+  if (saved) {
+    setUser(saved.trim());
+  }
+  }, []);
+  
+  // ⭐ AUTO-DETECT LANGUAGE
+  useEffect(() => {
+    const userLang = navigator.language || navigator.userLanguage;
+  
+    let lang = "en"; // default
+  
+    if (userLang.startsWith("fr")) lang = "fr";
+    if (userLang.startsWith("el")) lang = "el";
+  
+    i18n.changeLanguage(lang);
   }, []);
 
   const [reports, setReports] = useState(
